@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: #242424; */
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Form  ============= */
+
+.todo-create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 250px;
+}
+
+.form-title {
+    font-weight: 900;
+    font-size: 26px;
+    color: #333333;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.todo-create .todo-form input {
+    border-radius: 6px;
+    padding: 15px 20px;
+    border: 1px solid #dddddd;
+    margin-right: 5px;
+}
+
+.todo-create .todo-form button {
+    border-radius: 6px;
+    padding: 13px 20px;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    text-transform: lowercase;
+    /* font-weight: 500; */
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.todo-create .todo-form button:hover {
+    background-color: #e9e9e9;
+}
+
+/* TASK LIST =================== */
+
+.todo-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.task {
+    background-color: #cfcfcf;
+    border: 1px solid #bdbdbd;
+    border-radius: 7px;
+    padding: 10px 15px;
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task:hover .edit-menu {
+    opacity: 1;
+}
+
+.task button {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #cfcfcf;
+    padding: 3px 7px;
+    margin-right: 20px;
+}
+
+
+.task:hover .menu{
+    opacity: 1;
+}
+
+/* ================== MENU ===================== */
+
+.menu {
+    display: flex;
+    align-items: center;
+    
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.menu form:first-child button{
+    background-color: rgb(255, 117, 117);
+}
+
+.menu form:last-child {
+    display: flex;
+    align-items: center;
+}
+
+.menu form:last-child input {
+    margin-right: 20px;
+}
+
+.menu button:hover {
+    opacity: 0.9;
+}
+
+.menu :last-child.check-task {
+    opacity: 1;
+}
+
+.check-task {
+    opacity: 1 !important;
+}

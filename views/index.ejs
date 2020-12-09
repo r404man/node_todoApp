@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./parties/head') %>
+
+<body>
+    <div class="container">
+        <div class="todo-create">
+            <div class="form-title">Node Js ToDoList</div>
+            <form class="todo-form" action="/" method="POST">
+                <input class="todo-input" type="text" id="title" name="title" required>
+                <button class="todo-btn">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="single-list">
+            <div class="todo-text">
+                <% tasks.forEach(task => { %>
+                <div class="task" id="task">
+                    <div class="text">
+                        <%= task.title%>
+                    </div>
+                    <div class="menu" id="menu">
+                        <form action="/<%= task._id %> " method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Delete</button>
+                        </form>
+
+
+                        <form action="/<%= task._id %>" method="POST">
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="text" name="title" required>
+                            <button type="submit">Edit</button>
+                        </form>
+
+                    </div>
+                    <!-- <div class="check-task"> -->
+                    <input type="checkbox" name="checkTask" class="checktask">
+                    <!-- </div> -->
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let tasks = document.querySelectorAll('div.task');
+        tasks.forEach(task => {
+            let check = task.querySelector('.checktask');
+            check.addEventListener('click', () => {
+                if (check.checked) {
+                    task.style.opacity = 0.6;
+                    check.style.opacity = 1;
+                }
+                else {
+                    task.style.opacity = 1;
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
